@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<VBox alignment="TOP_LEFT" spacing="1.0" stylesheets="@Style.css" styleClass="fond" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.d3.AjoutClimController">
+   <children>
+      <HBox spacing="10.0" stylesheets="@Style.css" styleClass="fond_1">
+         <Label fx:id="marque" text="Marque :" /><TextArea fx:id="valMarque"
+                                                           minHeight="16" maxHeight="30" minWidth="69" maxWidth="100" />
+      </HBox>
+      <HBox spacing="10.0" stylesheets="@Style.css" styleClass="fond_1">
+         <Label fx:id="modele" text="Modele :" /><TextArea fx:id="valModele"
+                                                           minHeight="16" maxHeight="30" minWidth="69" maxWidth="100" />
+      </HBox>
+      <HBox spacing="10.0" stylesheets="@Style.css" styleClass="fond_2">
+      <Label fx:id="puissance" text="Puissance :" /><TextArea fx:id="valPuissance"
+                                                         minHeight="16" maxHeight="30" minWidth="69" maxWidth="100" />
+      </HBox>
+      <HBox alignment="CENTER" spacing="10.0" stylesheets="@Style.css" styleClass="fond_3">
+         <Button fx:id="valider" alignment="CENTER" text="Enregistrer!" onAction="#handleButtonAction"/>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

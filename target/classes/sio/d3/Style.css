@@ -1,0 +1,18 @@
+.root{
+    -fx-font-size: 11pt;
+    -fx-font-family: "Arial";
+}
+.fond {
+    -fx-background-color: #85c1e9;
+    -fx-font-size: 11pt;
+    -fx-font-family: "Arial";
+}
+.fond_1 {
+    -fx-background-color: #76d7c4;
+}
+.fond_2 {
+    -fx-background-color: #ec7063;
+}
+.fond_3 {
+    -fx-background-color: yellow;
+}
