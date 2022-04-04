@@ -5,47 +5,58 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import java.util.ArrayList;
 import java.util.List;
-    public class Climatiseur
-    {
+    public class Climatiseur {
         private StringProperty marque;
         private StringProperty modele;
         private IntegerProperty puissance;
-        private IntegerProperty surmincouv;
-        private IntegerProperty surmaxcouv;
-        public Climatiseur(String marque, String modele,int puissance)
-        {
+        private IntegerProperty surfaceMin;
+        private IntegerProperty surfaceMax;
+        private IntegerProperty id;
+
+        public Climatiseur(String marque, String modele, int puissance) {
             this.puissanceProperty().set(puissance);
             this.marqueProperty().set(marque);
             this.modeleProperty().set(modele);
-            this.surmincouvProperty().set(getSurfaceMinCouverte());
-            this.surmaxcouvProperty().set(getSurfaceMaxCouverte());
+            this.surfaceMinProperty().set(getSurfaceMinCouverte());
+            this.surfaceMaxProperty().set(getSurfaceMaxCouverte());
         }
-        public int getSurfaceMaxCouverte()
-        {
-            switch(puissanceProperty().get())
-            {
-                case 7000 : return 15;
-                case 9000: return 25;
-                case 12000: return 35;
-                case 18000: return 50;
-                case 24000: return 70;
-                case 30000: return 80;
+
+        public int getSurfaceMaxCouverte() {
+            switch (puissanceProperty().get()) {
+                case 7000:
+                    return 15;
+                case 9000:
+                    return 25;
+                case 12000:
+                    return 35;
+                case 18000:
+                    return 50;
+                case 24000:
+                    return 70;
+                case 30000:
+                    return 80;
             }
             return 0;
         }
-        public int getSurfaceMinCouverte()
-        {
-            switch(puissanceProperty().get())
-            {
-                case 7000 : return 7;
-                case 9000: return 15;
-                case 12000: return 25;
-                case 18000: return 35;
-                case 24000: return 50;
-                case 30000: return 70;
+
+        public int getSurfaceMinCouverte() {
+            switch (puissanceProperty().get()) {
+                case 7000:
+                    return 7;
+                case 9000:
+                    return 15;
+                case 12000:
+                    return 25;
+                case 18000:
+                    return 35;
+                case 24000:
+                    return 50;
+                case 30000:
+                    return 70;
             }
             return 0;
         }
+
         public List<Integer> getSurfaceCouverte(){
             List<Integer> surfaces = new ArrayList<>(2);
             switch(puissanceProperty().get()){
@@ -72,15 +83,20 @@ import java.util.List;
                 puissance = new SimpleIntegerProperty(this, "puissance");
             return puissance;
         }
-        public IntegerProperty surmincouvProperty() {
-            if (surmincouv == null)
-                surmincouv = new SimpleIntegerProperty(this, "surmincouv");
-            return surmincouv;
+        public IntegerProperty surfaceMinProperty() {
+            if (surfaceMin == null)
+                surfaceMin = new SimpleIntegerProperty(this, "surfaceMin");
+            return surfaceMin;
         }
-        public IntegerProperty surmaxcouvProperty() {
-            if (surmaxcouv == null)
-                surmaxcouv = new SimpleIntegerProperty(this, "surmaxcouv");
-            return surmaxcouv;
+        public IntegerProperty idProperty() {
+            if (id == null)
+                id = new SimpleIntegerProperty(this, "id");
+            return id;
+        }
+        public IntegerProperty surfaceMaxProperty() {
+            if (surfaceMax == null)
+                surfaceMax = new SimpleIntegerProperty(this, "surfaceMax");
+            return surfaceMax;
         }
         public int getPuissance() {
             return puissanceProperty().get();
@@ -91,11 +107,15 @@ import java.util.List;
         public String getModele() {
             return modeleProperty().get();
         }
+        public int getID() { return idProperty().get(); }
         public void setPuissance(int puissance) {
             puissanceProperty().setValue(puissance);
         }
         public void setMarque(String marque) {
             marqueProperty().setValue(marque);
+        }
+        public void setID(int id) {
+            idProperty().setValue(id);
         }
         public void setModele(String modele) {
             modeleProperty().setValue(modele);

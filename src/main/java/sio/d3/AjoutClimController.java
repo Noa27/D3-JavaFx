@@ -28,10 +28,10 @@ private void handleButtonAction(ActionEvent event) throws IOException
         int puiss = Integer.valueOf(valPuissance.getText()).intValue();
         String marque = valMarque.getText();
         String model = valModele.getText();
-    //création d'un nouvel objet
+    //création d'un nouvel objetva.)
         Climatiseur c = new Climatiseur(marque,model,puiss);
     //ajout du climatiseur dans la liste du climatiseur du modèle
-        Model.getClimatiseurs().add(c);
+        Model.insertClimatiseur(c);
     //on revient à la fenêtre d'affichage de la liste de climatiseurs.
         GestionDesClimatiseurs.setRoot("accueil_liste");
 }
