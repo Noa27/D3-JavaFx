@@ -48,6 +48,7 @@ public class ListeClimsController implements Initializable {
     {
         GestionDesClimatiseurs.setRoot("ajout_climatiseur");
     }
+    onMouseClicked="#ajoutClimatiseur" fitWidth="50" preserveRatio="true"
     @FXML
     public void modificationClimatiseur (TableColumn.CellEditEvent cellEditEvent) {
         System.out.println("La valeur est modifiée pour"
