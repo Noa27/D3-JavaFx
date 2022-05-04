@@ -8,14 +8,18 @@ import java.util.List;
     public class Climatiseur {
         private StringProperty marque;
         private StringProperty modele;
+        private StringProperty salle;
+        private StringProperty batiment;
         private IntegerProperty puissance;
         private IntegerProperty surfaceMin;
         private IntegerProperty surfaceMax;
         private IntegerProperty id;
 
-        public Climatiseur(String marque, String modele, int puissance) {
+        public Climatiseur(String salle, String batiment, String marque, String modele, int puissance) {
             this.puissanceProperty().set(puissance);
             this.marqueProperty().set(marque);
+            this.salleProperty().set(salle);
+            this.batimentProperty().set(batiment);
             this.modeleProperty().set(modele);
             this.surfaceMinProperty().set(getSurfaceMinCouverte());
             this.surfaceMaxProperty().set(getSurfaceMaxCouverte());
@@ -73,6 +77,14 @@ import java.util.List;
         public StringProperty marqueProperty() {
             if (marque == null) marque = new SimpleStringProperty(this, "marque");
             return marque;
+        }
+        public StringProperty batimentProperty() {
+            if (batiment == null) batiment = new SimpleStringProperty(this, "batiment");
+            return batiment;
+        }
+        public StringProperty salleProperty() {
+            if (salle == null) salle = new SimpleStringProperty(this, "salle");
+            return salle;
         }
         public StringProperty modeleProperty() {
             if (modele == null) modele = new SimpleStringProperty(this, "modele");

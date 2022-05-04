@@ -20,7 +20,7 @@ public class Model{
        try
         {
 //configuration de la base de données
-            String url1 = "jdbc:mysql://localhost:3307/" + "GestionClims?&useJDBCCompliantTimezoneShift=true" +
+            String url1 = "jdbc:mysql://localhost:3307/" + "gestsalle?&useJDBCCompliantTimezoneShift=true" +
             "GuseLegacyDatetimeCode=false&serverTimezone=UTC";
 //utilisateur pour connexion à la BDD
             String user = "user";
@@ -121,10 +121,12 @@ public class Model{
 //ajout de cet objet dans la liste
             while(rs.next()) // Cette boucle permet de créer des objets Climatiseur à partir des enregistrements de la BDD pour pouvoir ensuite les afficher dans l'app.
             {
+                String salle = rs.getString("salle");
+                String bat = rs.getString("batiment");
                 String mar = rs.getString("marque");
                 String mod = rs.getString("modele");
                 int pui = rs.getInt("puissance");
-                Climatiseur c = new Climatiseur(mar,mod,pui);
+                Climatiseur c = new Climatiseur(salle, bat, mar,mod,pui);
                 int id = rs.getInt("id");
                 c.setID(id);
                 climatiseurs.add(c);

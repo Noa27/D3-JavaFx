@@ -15,6 +15,14 @@
 <VBox alignment="TOP_LEFT" spacing="1.0" stylesheets="@Style.css" styleClass="fond" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sio.d3.AjoutClimController">
    <children>
       <HBox spacing="10.0" stylesheets="@Style.css" styleClass="fond_1">
+         <Label fx:id="salle" text="Salle :" /><TextArea fx:id="valSalle"
+                                                           minHeight="16" maxHeight="30" minWidth="69" maxWidth="100" />
+      </HBox>
+      <HBox spacing="10.0" stylesheets="@Style.css" styleClass="fond_1">
+         <Label fx:id="batiment" text="Batiment :" /><TextArea fx:id="valBatiment"
+                                                           minHeight="16" maxHeight="30" minWidth="69" maxWidth="100" />
+      </HBox>
+      <HBox spacing="10.0" stylesheets="@Style.css" styleClass="fond_1">
          <Label fx:id="marque" text="Marque :" /><TextArea fx:id="valMarque"
                                                            minHeight="16" maxHeight="30" minWidth="69" maxWidth="100" />
       </HBox>

@@ -15,6 +15,10 @@ public class AjoutClimController {
     private TextArea valPuissance;
     @FXML
     private TextArea valModele;
+    @FXML
+    private TextArea valSalle;
+    @FXML
+    private TextArea valBatiment;
 /*  @FXML
     private Label marque; */
     /*@FXML
@@ -28,8 +32,10 @@ private void handleButtonAction(ActionEvent event) throws IOException
         int puiss = Integer.valueOf(valPuissance.getText()).intValue();
         String marque = valMarque.getText();
         String model = valModele.getText();
+        String salle = valSalle.getText();
+        String batiment = valBatiment.getText();
     //création d'un nouvel objetva.)
-        Climatiseur c = new Climatiseur(marque,model,puiss);
+        Climatiseur c = new Climatiseur(salle, batiment, marque,model,puiss);
     //ajout du climatiseur dans la liste du climatiseur du modèle
         Model.insertClimatiseur(c);
     //on revient à la fenêtre d'affichage de la liste de climatiseurs.

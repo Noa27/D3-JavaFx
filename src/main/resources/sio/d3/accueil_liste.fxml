@@ -20,6 +20,20 @@
         <TableView fx:id="listeClims" layoutX="59.0" layoutY="55.0"
                    prefHeight="500.0" prefWidth="100.0">
             <columns>
+                <TableColumn fx:id="salle" prefWidth="100" text="Salle" >
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à une propriété dans la classe Climatiseur -->
+                    <cellValueFactory>
+                        <PropertyValueFactory property= "salle"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="batiment" prefWidth="100" text="Batiment" >
+                    <!--On indique que ce champs est une propriété qui-->
+                    <!-- correspondra à une propriété dans la classe Climatiseur -->
+                    <cellValueFactory>
+                        <PropertyValueFactory property= "batiment"/>
+                    </cellValueFactory>
+                </TableColumn>
                 <TableColumn fx:id="marque" prefWidth="100" text="Marque" onEditCommit="#modificationClimatiseur">
                     <!--On indique que ce champs est une propriété qui-->
                     <!-- correspondra à une propriété dans la classe Climatiseur -->
